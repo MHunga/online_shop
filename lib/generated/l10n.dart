@@ -135,11 +135,61 @@ class S {
     );
   }
 
+  /// `Sub Total`
+  String get sub_total {
+    return Intl.message(
+      'Sub Total',
+      name: 'sub_total',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Shipping fee`
+  String get shipping_fee {
+    return Intl.message(
+      'Shipping fee',
+      name: 'shipping_fee',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Set Payment`
+  String get set_payment {
+    return Intl.message(
+      'Set Payment',
+      name: 'set_payment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Shipping to`
+  String get shipping_to {
+    return Intl.message(
+      'Shipping to',
+      name: 'shipping_to',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Check out`
   String get checkout {
     return Intl.message(
       'Check out',
       name: 'checkout',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Payment`
+  String get payment {
+    return Intl.message(
+      'Payment',
+      name: 'payment',
       desc: '',
       args: [],
     );

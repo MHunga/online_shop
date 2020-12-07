@@ -37,9 +37,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "location" : MessageLookupByLibrary.simpleMessage("Location"),
     "logout" : MessageLookupByLibrary.simpleMessage("Log Out"),
     "none_payment_method" : MessageLookupByLibrary.simpleMessage("No payment method yet"),
+    "payment" : MessageLookupByLibrary.simpleMessage("Payment"),
     "payment_methods" : MessageLookupByLibrary.simpleMessage("Payment methods"),
     "search" : MessageLookupByLibrary.simpleMessage("Search"),
     "see_more" : MessageLookupByLibrary.simpleMessage("See more"),
+    "set_payment" : MessageLookupByLibrary.simpleMessage("Set Payment"),
+    "shipping_fee" : MessageLookupByLibrary.simpleMessage("Shipping fee"),
+    "shipping_to" : MessageLookupByLibrary.simpleMessage("Shipping to"),
+    "sub_total" : MessageLookupByLibrary.simpleMessage("Sub Total"),
     "total" : MessageLookupByLibrary.simpleMessage("Total"),
     "upgrade" : MessageLookupByLibrary.simpleMessage("Upgrade")
   };

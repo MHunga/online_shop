@@ -22,7 +22,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
         backgroundColor: Colors.transparent,
         leading: IconButton(icon: Icon(Icons.chevron_left), onPressed: (){
           Navigator.pop(context);}),
-        title: Text("Payment", style: TextStyle(color: Colors.black),),
+        title: Text(S.current.payment, style: TextStyle(color: Colors.black),),
         iconTheme: IconThemeData(color: Colors.black),
       ),
       body: _mainBody(context),
@@ -61,7 +61,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-        Text("Payment Methods", style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
+        Text(S.current.payment_methods, style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
           _itemRowMethod(iconLink: IconsLinks().credit, title: "Credit Card" ,index: 0),
           _itemRowMethod(iconLink: IconsLinks().payPal, title: "PayPal" ,index: 1),
           _itemRowMethod(iconLink: IconsLinks().google, title: "Google Play" ,index: 2),
@@ -111,21 +111,21 @@ class _PaymentScreenState extends State<PaymentScreen> {
             children: [
               Row(
                 children: [
-                  Text("Shipping fee",style: TextStyle(fontSize: 16),),
+                  Text(S.current.shipping_fee,style: TextStyle(fontSize: 16),),
                   Spacer(),
                   Text("\$10"),
                 ],
               ),
               Row(
                 children: [
-                  Text("Sub Total",style: TextStyle(fontSize: 16),),
+                  Text(S.current.sub_total,style: TextStyle(fontSize: 16),),
                   Spacer(),
                   Text("\$170",style: TextStyle(fontSize: 16),),
                 ],
               ),
               Row(
                 children: [
-                  Text("Total", style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
+                  Text(S.current.total, style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
                   Spacer(),
                   Text("\$180",style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
                 ],
@@ -139,7 +139,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                   child: Container(
                     alignment: Alignment.center,
                     width: MediaQuery.of(context).size.width,
-                    child: Text("Payment", style: TextStyle(fontSize: 16,color: Colors.white),),
+                    child: Text(S.current.payment, style: TextStyle(fontSize: 16,color: Colors.white),),
                   ))
             ],
           ),

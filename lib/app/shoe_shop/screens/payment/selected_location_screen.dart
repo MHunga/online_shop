@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:online_shop/app/shoe_shop/screens/payment/payment_screen.dart';
+import 'package:online_shop/generated/l10n.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 
 class SelectedLocationScreen extends StatefulWidget {
@@ -17,7 +18,7 @@ class _SelectedLocationScreenState extends State<SelectedLocationScreen> {
         backgroundColor: Colors.transparent,
         leading: IconButton(icon: Icon(Icons.chevron_left), onPressed: (){
           Navigator.pop(context);}),
-        title: Text("Shipping to", style: TextStyle(color: Colors.black),),
+        title: Text(S.current.shipping_to, style: TextStyle(color: Colors.black),),
         iconTheme: IconThemeData(color: Colors.black),
       ),
       body: _mainBody(context),
@@ -49,7 +50,7 @@ class _SelectedLocationScreenState extends State<SelectedLocationScreen> {
               child: Container(
                 alignment: Alignment.center,
                 width: MediaQuery.of(context).size.width,
-                child: Text("Set Payment", style: TextStyle(fontSize: 16,color: Colors.white),),
+                child: Text(S.current.set_payment, style: TextStyle(fontSize: 16,color: Colors.white),),
               ))
         ],
       ),
