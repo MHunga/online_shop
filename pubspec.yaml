@@ -94,6 +94,13 @@ flutter:
         - asset: assets/fonts/IBMPlexSans-SemiBoldItalic.ttf
         - asset: assets/fonts/IBMPlexSans-Thin.ttf
         - asset: assets/fonts/IBMPlexSans-ThinItalic.ttf
+    - family: SSOne
+      fonts:
+        - asset: assets/fonts/SairaStencilOne-Regular.ttf
+    - family: Sanchez
+      fonts:
+        - asset: assets/fonts/Sanchez-Italic.ttf
+        - asset: assets/fonts/Sanchez-Regular.ttf
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf

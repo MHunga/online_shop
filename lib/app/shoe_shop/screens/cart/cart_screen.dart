@@ -3,11 +3,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:online_shop/app/shoe_shop/model/cart_model.dart';
+import 'package:online_shop/app/shoe_shop/screens/payment/payment_screen.dart';
+import 'package:online_shop/app/shoe_shop/screens/payment/selected_location_screen.dart';
 import 'package:online_shop/app/shoe_shop/screens/root_screen/provider/cart_provider.dart';
 import 'package:online_shop/data_source/assets_link/assets_links.dart';
 import 'package:online_shop/data_source/database/database.dart';
 import 'package:online_shop/data_source/database/src/cart_database_provider.dart';
 import 'package:online_shop/generated/l10n.dart';
+import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 import 'package:provider/provider.dart';
 
 import 'item_cart.dart';
@@ -29,6 +32,7 @@ class CartScreenState extends State<CartScreen> with TickerProviderStateMixin {
   GlobalKey<AnimatedListState> listKey =  GlobalKey<AnimatedListState>();
   @override
   Widget build(BuildContext context) {
+    precacheImage(AssetImage(ImageLinks().creditCardBackground),context);
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
@@ -106,13 +110,16 @@ class CartScreenState extends State<CartScreen> with TickerProviderStateMixin {
                           ],
                         ),
 
-                        FlatButton(onPressed: (){},
+                        FlatButton(onPressed: (){
+                          pushNewScreen(context,screen: SelectedLocationScreen(),
+                          withNavBar: false);
+                        },
                             color: Colors.red,
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.only(topLeft: Radius.circular(12),topRight:  Radius.circular(12),bottomLeft:  Radius.circular(12),bottomRight:  Radius.circular(4) )
                             ),
                             padding: EdgeInsets.symmetric(vertical: 15,horizontal: 20),
-                            child: AutoSizeText(S.current.order, minFontSize: 1, maxLines: 1,style: TextStyle(color: Colors.white,fontSize: 18),))
+                            child: AutoSizeText(S.current.checkout, minFontSize: 1, maxLines: 1,style: TextStyle(color: Colors.white,fontSize: 18),))
                       ],
                     ),
                   ),

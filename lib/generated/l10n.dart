@@ -135,11 +135,11 @@ class S {
     );
   }
 
-  /// `Order`
-  String get order {
+  /// `Check out`
+  String get checkout {
     return Intl.message(
-      'Order',
-      name: 'order',
+      'Check out',
+      name: 'checkout',
       desc: '',
       args: [],
     );
