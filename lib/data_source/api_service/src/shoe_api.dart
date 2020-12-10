@@ -33,7 +33,7 @@ class ShoeApiService {
 
   var dataDemo = {
     "code": "success",
-    "msg": "Thành công.",
+    "msg": "Success!",
     "list": [
       {
         "id": 0,
