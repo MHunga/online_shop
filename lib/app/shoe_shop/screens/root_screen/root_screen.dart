@@ -77,7 +77,7 @@ class _RootScreenState extends State<RootScreen> {
       ),
       PersistentBottomNavBarItem(
         icon: Icon(Icons.search),
-        title: ("Tìm kiếm"),
+        title: ("Search"),
           activeColor: Color(0xff0035BA),
           inactiveColor: Color(0xff2E3A59)
       ),
@@ -86,13 +86,13 @@ class _RootScreenState extends State<RootScreen> {
               builder: (context, cartPrv, child){
                 return  CartWidget(isNav: true,listKey: listKey,listCart: cartPrv.listCart,);
               },),
-          title: ("Giỏ hàng"),
+          title: ("Cart"),
           activeColor: Color(0xff0035BA),
           inactiveColor: Color(0xff2E3A59)
       ),
       PersistentBottomNavBarItem(
           icon: Icon(Icons.person),
-          title: ("Cá nhân"),
+          title: ("Profile"),
           activeColor: Color(0xff0035BA),
           inactiveColor: Color(0xff2E3A59)
       ),
