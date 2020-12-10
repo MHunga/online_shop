@@ -63,7 +63,6 @@ class _DetailsShoeState extends State<DetailsShoe> {
         Positioned(
           bottom: 0,
             child: Container(
-              height: 150,
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
                 color: Colors.white,
@@ -102,7 +101,7 @@ class _DetailsShoeState extends State<DetailsShoe> {
                     Container(
                       width: MediaQuery.of(context).size.width,
                         child: Text(widget.product.type,style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold,color: Colors.black.withOpacity(0.5)),)),
-                    Spacer(),
+                    SizedBox(height: 20,),
                    AddToCartButton(cartKey: cartKey,
                      onAddToCart: (){
 
@@ -130,7 +129,7 @@ class _DetailsShoeState extends State<DetailsShoe> {
     return SliverAppBar(
       pinned: true,
       backgroundColor: Colors.white,
-      expandedHeight: 320,
+      expandedHeight: MediaQuery.of(context).size.height/2.5,
       iconTheme: IconThemeData(color: Colors.black),
       flexibleSpace: FlexibleSpaceBar(
         collapseMode: CollapseMode.parallax,

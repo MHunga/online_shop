@@ -83,7 +83,7 @@ class _SearchScreenState extends State<SearchScreen> {
                 return  GridView.builder(
                     itemCount: snapshot.data.list.length,
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: MediaQuery.of(context).size.width~/180,
+                        crossAxisCount: MediaQuery.of(context).size.width~/180>2 ? 3: 2,
                         crossAxisSpacing: 10,
                         mainAxisSpacing: 10,
                         childAspectRatio: 0.69

@@ -43,16 +43,16 @@ class _HomeScreenState extends State<HomeScreen> {
     return SliverAppBar(
       backgroundColor: Colors.white,
       elevation: 0,
-      expandedHeight: 250,
+      expandedHeight: MediaQuery.of(context).size.height/2.3,
       iconTheme: IconThemeData(color: Colors.black),
       flexibleSpace: FlexibleSpaceBar(
         collapseMode: CollapseMode.parallax,
         background: Container(
-          height: 250,
+          height: MediaQuery.of(context).size.height/2.3,
           child: Stack(
             alignment: Alignment.center,
             children: [
-              Container(height: 250, color: Color(0xffF2F2F2),),
+              Container(height: MediaQuery.of(context).size.height/2.3, color: Color(0xffF2F2F2),),
               Positioned(
                 bottom: 0,
                 child: Transform.rotate(

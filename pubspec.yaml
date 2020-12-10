@@ -44,6 +44,7 @@ dependencies:
   provider: ^4.3.2+2
   intl: ^0.16.1
   persistent_bottom_nav_bar: ^2.1.0
+  introduction_screen: ^1.0.7
 
 
 dev_dependencies:

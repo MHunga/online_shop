@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:online_shop/app/app.dart';
+import 'package:online_shop/app/shoe_shop/screens/introduction/introduction.dart';
 import 'package:online_shop/data_source/database/database.dart';
 import 'package:provider/provider.dart';
 import 'app/shoe_shop/model/cart_model.dart';
@@ -36,7 +37,7 @@ class MyApp extends StatelessWidget {
           GlobalCupertinoLocalizations.delegate,
         ],
         supportedLocales: S.delegate.supportedLocales,
-      home: ShoeLoginScreen(),
+      home: ShoeShopIntroduction(),
     );
   }
 }
