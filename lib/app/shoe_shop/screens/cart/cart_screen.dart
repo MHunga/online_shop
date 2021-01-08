@@ -3,7 +3,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:online_shop/app/shoe_shop/model/cart_model.dart';
-import 'package:online_shop/app/shoe_shop/screens/payment/payment_screen.dart';
 import 'package:online_shop/app/shoe_shop/screens/payment/selected_location_screen.dart';
 import 'package:online_shop/app/shoe_shop/screens/root_screen/provider/cart_provider.dart';
 import 'package:online_shop/data_source/assets_link/assets_links.dart';
@@ -15,6 +14,7 @@ import 'package:provider/provider.dart';
 
 import 'item_cart.dart';
 
+// ignore: must_be_immutable
 class CartScreen extends StatefulWidget {
   GlobalKey<AnimatedListState> listKey;
   bool isFromNav;

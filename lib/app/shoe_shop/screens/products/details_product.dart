@@ -13,6 +13,7 @@ import 'package:provider/provider.dart';
 
 import 'selected_color.dart';
 
+// ignore: must_be_immutable
 class DetailsShoe extends StatefulWidget {
   GlobalKey<AnimatedListState> listKey;
   List<Cart> listCart;

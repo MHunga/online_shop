@@ -123,7 +123,7 @@ class ProfileScreen extends StatelessWidget {
     );
   }
 
-  _itemSelectedRow({BuildContext context,String iconLink, String title, String subTitle}){
+  _itemSelectedRow({String iconLink, String title, String subTitle}){
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 10),
       child: Column(

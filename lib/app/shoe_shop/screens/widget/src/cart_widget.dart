@@ -1,13 +1,11 @@
-import 'dart:math';
 
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:online_shop/app/shoe_shop/model/cart_model.dart';
 import 'package:online_shop/app/shoe_shop/screens/screens.dart';
-import 'package:online_shop/data_source/assets_link/assets_links.dart';
 import 'package:online_shop/data_source/database/database.dart';
-import 'package:provider/provider.dart';
 
+// ignore: must_be_immutable
 class CartWidget extends StatefulWidget {
   GlobalKey<AnimatedListState> listKey;
   List<Cart> listCart;

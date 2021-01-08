@@ -5,6 +5,8 @@ import 'package:online_shop/app/shoe_shop/screens/root_screen/root_screen.dart';
 import 'package:online_shop/app/shoe_shop/screens/widget/src/button_authen.dart';
 import 'package:online_shop/app/shoe_shop/screens/widget/src/text_field_authen.dart';
 
+
+// ignore: must_be_immutable
 class ShoeLoginScreen extends StatelessWidget {
   FocusNode _emailNode = FocusNode();
   FocusNode _passNode = FocusNode();

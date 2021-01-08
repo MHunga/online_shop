@@ -9,6 +9,7 @@ import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 
 import 'details_product.dart';
 
+// ignore: must_be_immutable
 class ItemProduct extends StatefulWidget {
   GlobalKey<AnimatedListState> listKey;
   List<Cart> listCart;
@@ -22,12 +23,6 @@ class ItemProduct extends StatefulWidget {
 }
 
 class _ItemProductState extends State<ItemProduct> with TickerProviderStateMixin {
-  AnimationController _animationController;
-  @override
-  void initState() {
-  _animationController = AnimationController(vsync: this, duration: Duration(milliseconds: 500));
-    super.initState();
-  }
   @override
   Widget build(BuildContext context) {
     return Container(

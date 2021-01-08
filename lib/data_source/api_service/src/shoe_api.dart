@@ -1,11 +1,10 @@
-import 'dart:convert';
 
 import 'package:dio/dio.dart';
 import 'package:online_shop/app/shoe_shop/model/response_product_model.dart';
 
 class ShoeApiService {
 
-  Dio _dio = Dio();
+
   
   Future<ResponseProduct> getListShoe ()async{
     try {

@@ -8,6 +8,7 @@ import 'package:online_shop/generated/l10n.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 import 'package:provider/provider.dart';
 
+// ignore: must_be_immutable
 class HomeScreen extends StatefulWidget {
   GlobalKey<AnimatedListState> listKey;
 

@@ -7,7 +7,7 @@ import 'package:online_shop/generated/l10n.dart';
 import 'package:provider/provider.dart';
 
 import 'item_product.dart';
-
+// ignore: must_be_immutable
 class SearchScreen extends StatefulWidget {
   GlobalKey<AnimatedListState> listKey;
 
