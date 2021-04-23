@@ -28,7 +28,7 @@ class _AddToCartButtonState extends State<AddToCartButton>
     _animationController2 =
         AnimationController(vsync: this, duration: Duration(milliseconds: 500));
     _animation =
-        Tween<double>(begin: 1, end: 0.2).animate(_animationController!);
+        Tween<double>(begin: 1, end: 1 / 5).animate(_animationController!);
     _animation2 = MaterialPointArcTween(begin: Offset.zero, end: Offset.zero)
         .animate(_animationController2!);
     _animationController!.addListener(() {
@@ -38,6 +38,7 @@ class _AddToCartButtonState extends State<AddToCartButton>
     });
     _animationController2?.addListener(() {
       if (_animationController2!.isCompleted) {
+        // Khi transition hoàn thành thì animate ở icon cart
         widget.cartKey!.currentState?.animate();
         _animationController2!.reset();
         _animationController!.reset();

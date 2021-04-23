@@ -66,7 +66,7 @@ class CartScreenState extends State<CartScreen> with TickerProviderStateMixin {
                           cart: cartPrv.listCart[index],
                           onChange: (val) async {
                             cartPrv.listCart[index].amount = val;
-                            await CartDBProvider.db.updateItemCart(
+                            await CartDB.db.updateItemCart(
                                 amount: val, id: cartPrv.listCart[index].id!);
                             if (mounted)
                               Provider.of<CartProvider>(context, listen: false)
@@ -188,7 +188,7 @@ class CartScreenState extends State<CartScreen> with TickerProviderStateMixin {
   }
 
   _deleteItem(BuildContext context, int index, int id) async {
-    await CartDBProvider.db.delete(id);
+    await CartDB.db.delete(id);
     Provider.of<CartProvider>(context, listen: false).deleteCart(
         index: index,
         listKey: listKey,

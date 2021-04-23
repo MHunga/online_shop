@@ -181,12 +181,7 @@ class _HomeScreenState extends State<HomeScreen> {
               padding: EdgeInsets.zero,
               onPressed: () {
                 pushNewScreen(context,
-                    screen: DetailsShoe(
-                      product: listProduct[index],
-                      listKey: widget.listKey!,
-                      listCart: cartPrv.listCart,
-                      tag: listProduct[index].urlPhoto! + width.toString(),
-                    ),
+                    screen: DetailsShoe(),
                     customPageRoute: PageRouteBuilder(
                         pageBuilder: (context, animation, anotherAnimation) {
                           return DetailsShoe(

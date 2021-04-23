@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:online_shop/app/app.dart';
@@ -10,48 +9,49 @@ class ShoeShopIntroduction extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-
     return Scaffold(
       body: _mainBody(context),
     );
   }
 
   _mainBody(BuildContext context) {
-    PageDecoration pageDecoration =  PageDecoration(
-    titleTextStyle: TextStyle(fontSize: 28.0, fontWeight: FontWeight.w700),
-    descriptionPadding: EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 16.0),
-    pageColor: Colors.white,
-    imagePadding: EdgeInsets.zero, );
+    PageDecoration pageDecoration = PageDecoration(
+      titleTextStyle: TextStyle(fontSize: 28.0, fontWeight: FontWeight.w700),
+      descriptionPadding: EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 16.0),
+      pageColor: Colors.white.withOpacity(0.9),
+      fullScreen: true,
+      imagePadding: EdgeInsets.zero,
+    );
     return IntroductionScreen(
       key: introKey,
       pages: [
         PageViewModel(
           title: "Find many products",
-          body:
-          "You can find many products whenever you want",
-          image: Center(child: Image.asset(ImageLinks().intro1),),
+          body: "You can find many products whenever you want",
+          image: Center(
+            child: Image.asset(ImageLinks().intro1),
+          ),
           decoration: pageDecoration,
         ),
         PageViewModel(
           title: "Fast delivery",
-          body:
-          "Purchasing will be easy with our professional delivery team",
-          image: Center(child: Image.asset(ImageLinks().intro2),),
+          body: "Purchasing will be easy with our professional delivery team",
+          image: Center(
+            child: Image.asset(ImageLinks().intro2),
+          ),
           decoration: pageDecoration,
         ),
         PageViewModel(
           title: "Secure payment",
-          body:
-          "Fast, safe and secure",
-          image:Center(child: Image.asset(ImageLinks().intro3),),
+          body: "Fast, safe and secure",
+          image: Center(
+            child: Image.asset(ImageLinks().intro3),
+          ),
           decoration: pageDecoration,
         ),
       ],
       onDone: () {
-        pushNewScreen(context,
-        screen: ShoeLoginScreen(),
-        withNavBar: false);
+        pushNewScreen(context, screen: ShoeLoginScreen(), withNavBar: false);
       },
       onSkip: () => pushNewScreen(context,
           screen: ShoeLoginScreen(),
