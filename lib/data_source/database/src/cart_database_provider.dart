@@ -3,9 +3,9 @@ import 'package:online_shop/app/shoe_shop/model/cart_model.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
 
-class CartDBProvider {
-  CartDBProvider._();
-  static final CartDBProvider db = CartDBProvider._();
+class CartDB {
+  CartDB._();
+  static final CartDB db = CartDB._();
   final String _table = "CART";
   Database? _database;
 

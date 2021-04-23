@@ -35,7 +35,7 @@ class CartWidgetState extends State<CartWidget>
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<List<Cart>>(
-        future: CartDBProvider.db.getListItemInCart(),
+        future: CartDB.db.getListItemInCart(),
         builder: (context, snapshot) {
           return GestureDetector(
             onTap: widget.isNav

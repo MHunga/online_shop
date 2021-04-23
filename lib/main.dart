@@ -9,7 +9,7 @@ import 'generated/l10n.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  List<Cart> listCart = await CartDBProvider.db.getListItemInCart();
+  List<Cart> listCart = await CartDB.db.getListItemInCart();
   runApp(ChangeNotifierProvider<CartProvider>(
     create: (_) => CartProvider(listCart),
     builder: (context, child) => MyApp(),
