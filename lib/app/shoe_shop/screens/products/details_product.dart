@@ -289,32 +289,25 @@ class _DetailsShoeState extends State<DetailsShoe> {
   }
 
   _onAddToCart(BuildContext context, int id, Cart cart) async {
-    List<Cart> list = await CartDBProvider.db.getListItemInCart();
-    if (list != null) {
-      if (list.length > 0) {
-        if (list.any((element) => id == element.id)) {
-          for (int i = 0; i < list.length; i++) {
-            if (id == list[i].id) {
-              Provider.of<CartProvider>(context, listen: false)
-                  .updateAmount(amount: list[i].amount! + 1, index: i);
-              await CartDBProvider.db
-                  .updateItemCart(amount: list[i].amount! + 1, id: id);
-            }
+    List<Cart> list = await CartDB.db.getListItemInCart();
+    if (list.length > 0) {
+      if (list.any((element) => id == element.id)) {
+        for (int i = 0; i < list.length; i++) {
+          if (id == list[i].id) {
+            Provider.of<CartProvider>(context, listen: false)
+                .updateAmount(amount: list[i].amount! + 1, index: i);
+            await CartDB.db.updateItemCart(amount: list[i].amount! + 1, id: id);
           }
-        } else {
-          Provider.of<CartProvider>(context, listen: false)
-              .addCart(cart: cart, listKey: widget.listKey!);
-          await CartDBProvider.db.insert(cart);
         }
       } else {
         Provider.of<CartProvider>(context, listen: false)
             .addCart(cart: cart, listKey: widget.listKey!);
-        await CartDBProvider.db.insert(cart);
+        await CartDB.db.insert(cart);
       }
     } else {
       Provider.of<CartProvider>(context, listen: false)
           .addCart(cart: cart, listKey: widget.listKey!);
-      await CartDBProvider.db.insert(cart);
+      await CartDB.db.insert(cart);
     }
   }
 }
