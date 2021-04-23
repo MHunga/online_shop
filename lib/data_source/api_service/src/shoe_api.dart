@@ -1,33 +1,26 @@
-
 import 'package:dio/dio.dart';
 import 'package:online_shop/app/shoe_shop/model/response_product_model.dart';
 
 class ShoeApiService {
-
-
-  
-  Future<ResponseProduct> getListShoe ()async{
+  Future<ResponseProduct> getListShoe() async {
     try {
-     // Response response = await _dio.get("https://jsonblob.com/api/jsonBlob/4f488d11-307a-11eb-83d3-1140910d6286");
-     // var data = jsonDecode(response.toString());
-
+      // Response response = await _dio.get("https://jsonblob.com/api/jsonBlob/4f488d11-307a-11eb-83d3-1140910d6286");
+      // var data = jsonDecode(response.toString());
 
       return ResponseProduct.fromJson(dataDemo);
-    }
-    on DioError catch(e){
-      if(e.type == DioErrorType.CONNECT_TIMEOUT){
+    } on DioError catch (e) {
+      if (e.type == DioErrorType.connectTimeout) {
         return ResponseProduct(code: "error", msg: "Timeout");
       }
-      if(e.type == DioErrorType.RECEIVE_TIMEOUT){
+      if (e.type == DioErrorType.connectTimeout) {
         return ResponseProduct(code: "error", msg: "Timeout");
       }
-      if(e.response!=null) {
-        return ResponseProduct(code: "error", msg:  "Erorr");
-      } else{
-        return ResponseProduct(code: "error", msg:  e.message);
+      if (e.response != null) {
+        return ResponseProduct(code: "error", msg: "Erorr");
+      } else {
+        return ResponseProduct(code: "error", msg: e.message);
       }
     }
-    
   }
 
   var dataDemo = {
@@ -38,10 +31,12 @@ class ShoeApiService {
         "id": 0,
         "name_category_product": "shoe",
         "id_category_product": 1,
-        "url_photo": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/1baaa1cf-6e08-43f4-b170-a0878ec7e182/kyrie-7-ep-basketball-shoe-kMwm27.jpg",
+        "url_photo":
+            "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/1baaa1cf-6e08-43f4-b170-a0878ec7e182/kyrie-7-ep-basketball-shoe-kMwm27.jpg",
         "name": "Kyrie 7 EP",
         "price": "166",
-        "description": "Kyrie Irving is a creative force on and off the court. He needs his shoes to keep up with his playmaking, but also sync with his boundary-pushing style and ethos. Tuned for the next generation of energy return, control and speed, the Kyrie 7 helps players at all levels take advantage of their quick first step by optimising the shoe's fit, court feel and banking ability.",
+        "description":
+            "Kyrie Irving is a creative force on and off the court. He needs his shoes to keep up with his playmaking, but also sync with his boundary-pushing style and ethos. Tuned for the next generation of energy return, control and speed, the Kyrie 7 helps players at all levels take advantage of their quick first step by optimising the shoe's fit, court feel and banking ability.",
         "type": "Basketball Shoe",
         "size": [
           "40",
@@ -84,10 +79,12 @@ class ShoeApiService {
         "id": 1,
         "name_category_product": "shoe",
         "id_category_product": 1,
-        "url_photo": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/e22f5463-2687-42fd-a6e4-27e90c206200/kyrie-7-ep-basketball-shoe-8ZrrMn.jpg",
+        "url_photo":
+            "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/e22f5463-2687-42fd-a6e4-27e90c206200/kyrie-7-ep-basketball-shoe-8ZrrMn.jpg",
         "name": "Kyrie 7 EP 'Sisterhood'",
         "price": "166",
-        "description": "Kyrie made headlines with his generous, outspoken support of female ballers. Nike is joining him with the special 'Sisterhood' colourway of the Kyrie 7 EP, which aims to empower and unify support for women athletes everywhere. The eye-grabbing aesthetic is highlighted by a detailed floral graphic underneath the pop of its yellow-outlined Swoosh logo. On or off the court, show your support for women athletes in style. This EP version uses an extra-durable outsole that's ideal for outdoor courts.",
+        "description":
+            "Kyrie made headlines with his generous, outspoken support of female ballers. Nike is joining him with the special 'Sisterhood' colourway of the Kyrie 7 EP, which aims to empower and unify support for women athletes everywhere. The eye-grabbing aesthetic is highlighted by a detailed floral graphic underneath the pop of its yellow-outlined Swoosh logo. On or off the court, show your support for women athletes in style. This EP version uses an extra-durable outsole that's ideal for outdoor courts.",
         "type": "Basketball Shoe",
         "size": [
           "40",
@@ -130,10 +127,12 @@ class ShoeApiService {
         "id": 2,
         "name_category_product": "shoe",
         "id_category_product": 1,
-        "url_photo": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/e26c3527-0cca-4502-971a-9cc07ffb2440/air-force-1-crater-shoe-Z7JHnk.jpg",
+        "url_photo":
+            "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/e26c3527-0cca-4502-971a-9cc07ffb2440/air-force-1-crater-shoe-Z7JHnk.jpg",
         "name": "Nike Air Force 1 Crater",
         "price": "140",
-        "description": "The sneakers that helped define street style are re-imagined with Crater Foam, weighing in with at least 20% recycled materials. The super-soft Crater Foam midsole is made from a spacey mix of approximately 11% Nike Grind rubber and foam materials. With a speckled outsole made from 15% Nike Grind rubber, each pair of the Nike Air Force 1 Crater is unique and durable.",
+        "description":
+            "The sneakers that helped define street style are re-imagined with Crater Foam, weighing in with at least 20% recycled materials. The super-soft Crater Foam midsole is made from a spacey mix of approximately 11% Nike Grind rubber and foam materials. With a speckled outsole made from 15% Nike Grind rubber, each pair of the Nike Air Force 1 Crater is unique and durable.",
         "type": "Men's Shoe",
         "size": [
           "40",
@@ -176,10 +175,12 @@ class ShoeApiService {
         "id": 3,
         "name_category_product": "shoe",
         "id_category_product": 1,
-        "url_photo": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/59b4a0e0-79ab-4803-8301-f804dd50e240/jordan-delta-shoe-mBgHNX.jpg",
+        "url_photo":
+            "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/59b4a0e0-79ab-4803-8301-f804dd50e240/jordan-delta-shoe-mBgHNX.jpg",
         "name": "Jordan Delta",
         "price": "178",
-        "description": "The Jordan Delta is a versatile shoe that's comfortable from the inside out. Mixing high-tech and premium materials, it's plush, lightweight and crafted with an array of details.",
+        "description":
+            "The Jordan Delta is a versatile shoe that's comfortable from the inside out. Mixing high-tech and premium materials, it's plush, lightweight and crafted with an array of details.",
         "type": "Men's Shoe",
         "size": [
           "40",
@@ -212,10 +213,12 @@ class ShoeApiService {
         "id": 4,
         "name_category_product": "shoe",
         "id_category_product": 1,
-        "url_photo": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/1367bf94-afa0-464e-bae6-a36e20602daa/air-zoom-bb-nxt-basketball-shoe-wRmJMz.jpg",
+        "url_photo":
+            "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/1367bf94-afa0-464e-bae6-a36e20602daa/air-zoom-bb-nxt-basketball-shoe-wRmJMz.jpg",
         "name": "Nike Air Zoom BB NXT",
         "price": "229",
-        "description": "Keep your focus on the game in the new Air Zoom BB NXT from Nike Basketball. It's designed to help players feel light, secure and responsive. You get energy back with every step, helping to turn your force into momentum when it matters most.",
+        "description":
+            "Keep your focus on the game in the new Air Zoom BB NXT from Nike Basketball. It's designed to help players feel light, secure and responsive. You get energy back with every step, helping to turn your force into momentum when it matters most.",
         "type": "Basketball Shoe",
         "size": [
           "40",
@@ -258,10 +261,12 @@ class ShoeApiService {
         "id": 5,
         "name_category_product": "shoe",
         "id_category_product": 1,
-        "url_photo": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/b1bd3b36-1dfe-46cf-b703-0039bb70aad8/air-jordan-xxxv-pf-basketball-shoe-QrRrHz.jpg",
+        "url_photo":
+            "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/b1bd3b36-1dfe-46cf-b703-0039bb70aad8/air-jordan-xxxv-pf-basketball-shoe-QrRrHz.jpg",
         "name": "Air Jordan XXXV PF",
         "price": "223",
-        "description": "The lighter the shoe, the less weight to carry, the faster players can go. Evolving last year's release, the Air Jordan XXXV features a stabilising Eclipse plate 2.0, visible cushioning and new Flightwire cables. Lightweight and responsive, it's designed to help players get the most from their power and athleticism. This PF version uses an extra-durable outsole that's ideal for outdoor courts.",
+        "description":
+            "The lighter the shoe, the less weight to carry, the faster players can go. Evolving last year's release, the Air Jordan XXXV features a stabilising Eclipse plate 2.0, visible cushioning and new Flightwire cables. Lightweight and responsive, it's designed to help players get the most from their power and athleticism. This PF version uses an extra-durable outsole that's ideal for outdoor courts.",
         "type": "Basketball Shoe",
         "size": [
           "40",
@@ -294,10 +299,12 @@ class ShoeApiService {
         "id": 6,
         "name_category_product": "shoe",
         "id_category_product": 1,
-        "url_photo": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/33b5d9f9-c639-4d34-9da9-7fe507235e35/blazer-mid-77-infinite-shoe-dCp5Mm.jpg",
+        "url_photo":
+            "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/33b5d9f9-c639-4d34-9da9-7fe507235e35/blazer-mid-77-infinite-shoe-dCp5Mm.jpg",
         "name": "Nike Blazer Mid '77 Infinite",
         "price": "140",
-        "description": "The Nike Blazer Mid '77 Infinite toughens up the old-school, b-ball icon that has become the go-to of the streets. Durable rubber details on the toe, heel and side let you take it where you want, day in and day out, while the piping and distorted Swoosh logo add a modern touch.",
+        "description":
+            "The Nike Blazer Mid '77 Infinite toughens up the old-school, b-ball icon that has become the go-to of the streets. Durable rubber details on the toe, heel and side let you take it where you want, day in and day out, while the piping and distorted Swoosh logo add a modern touch.",
         "type": "Men's Shoe",
         "size": [
           "40",
@@ -340,10 +347,12 @@ class ShoeApiService {
         "id": 7,
         "name_category_product": "shoe",
         "id_category_product": 1,
-        "url_photo": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/b1a99d95-7b76-4df8-950a-2b89a5aef783/air-max-1-shoe-SS9rJG.jpg",
+        "url_photo":
+            "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/b1a99d95-7b76-4df8-950a-2b89a5aef783/air-max-1-shoe-SS9rJG.jpg",
         "name": "Nike Air Max 1",
         "price": "178",
-        "description": "The Nike Air Max 1 reboots the legendary design that has reigned supreme since 1987. Crossing street fashion with sport, it takes the same lightweight cushioning and classic silhouette of the OG and boldly reworks it with salvaged materials, fresh colours and exposed stitching.",
+        "description":
+            "The Nike Air Max 1 reboots the legendary design that has reigned supreme since 1987. Crossing street fashion with sport, it takes the same lightweight cushioning and classic silhouette of the OG and boldly reworks it with salvaged materials, fresh colours and exposed stitching.",
         "type": "Men'shoe",
         "size": [
           "40",
@@ -376,10 +385,12 @@ class ShoeApiService {
         "id": 8,
         "name_category_product": "shoe",
         "id_category_product": 1,
-        "url_photo": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/5607fc07-c44d-467d-9fb4-440981f6affc/air-max-95-essential-shoe-R8WBq5.jpg",
+        "url_photo":
+            "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/5607fc07-c44d-467d-9fb4-440981f6affc/air-max-95-essential-shoe-R8WBq5.jpg",
         "name": "Nike Air Max 95 Essential",
         "price": "204",
-        "description": "Taking inspiration from the human body and running DNA, the Nike Air Max 95 Essential mixes unbelievable comfort with head-turning style. The iconic side panels represent muscles while visible Nike Air in the heel and forefoot cushions your every step.",
+        "description":
+            "Taking inspiration from the human body and running DNA, the Nike Air Max 95 Essential mixes unbelievable comfort with head-turning style. The iconic side panels represent muscles while visible Nike Air in the heel and forefoot cushions your every step.",
         "type": "Men's Shoe",
         "size": [
           "40",
@@ -422,10 +433,12 @@ class ShoeApiService {
         "id": 9,
         "name_category_product": "shoe",
         "id_category_product": 1,
-        "url_photo": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/1f244790-42ef-47da-9546-86e7bba12f45/air-zoom-tempo-next-running-shoe-chNfdw.jpg",
+        "url_photo":
+            "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/1f244790-42ef-47da-9546-86e7bba12f45/air-zoom-tempo-next-running-shoe-chNfdw.jpg",
         "name": "Nike Air Zoom Tempo NEXT%",
         "price": "255",
-        "description": "The Nike Air Zoom Tempo NEXT% mixes durability with a design that helps push you towards your personal best. The result is a shoe built like a racer, but made for your everyday training routine.",
+        "description":
+            "The Nike Air Zoom Tempo NEXT% mixes durability with a design that helps push you towards your personal best. The result is a shoe built like a racer, but made for your everyday training routine.",
         "type": "Men's Running Shoe",
         "size": [
           "40",
@@ -478,10 +491,12 @@ class ShoeApiService {
         "id": 10,
         "name_category_product": "shoe",
         "id_category_product": 1,
-        "url_photo": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/a639f8e9-bdc2-4e24-88cf-9d56a2f81574/air-zoom-tempo-next-flyease-running-shoe-40pJSQ.jpg",
+        "url_photo":
+            "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/a639f8e9-bdc2-4e24-88cf-9d56a2f81574/air-zoom-tempo-next-flyease-running-shoe-40pJSQ.jpg",
         "name": "Nike Air Zoom Tempo Next% FlyEase",
         "price": "255",
-        "description": "The ultra-responsive Nike Air Zoom Tempo Next% FlyEase is designed to help you get the most from your training runs, so you can go confidently into your next (or first) race. It has a step-in entry and an internal lacing mechanism you operate with one hand. Pull one loop to tighten, another to release.",
+        "description":
+            "The ultra-responsive Nike Air Zoom Tempo Next% FlyEase is designed to help you get the most from your training runs, so you can go confidently into your next (or first) race. It has a step-in entry and an internal lacing mechanism you operate with one hand. Pull one loop to tighten, another to release.",
         "type": "Men's Running Shoe",
         "size": [
           "40",
@@ -514,10 +529,12 @@ class ShoeApiService {
         "id": 11,
         "name_category_product": "shoe",
         "id_category_product": 1,
-        "url_photo": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/3fc45e78-493a-4628-ba86-e8291233ba7d/air-max-270-react-rs-shoe-LFF98p.jpg",
+        "url_photo":
+            "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/3fc45e78-493a-4628-ba86-e8291233ba7d/air-max-270-react-rs-shoe-LFF98p.jpg",
         "name": "Nike Air Max 270 React RS",
         "price": "204",
-        "description": "Meet the softest, smoothest, most resilient foam yet in the Nike Air Max 270 React. One of Nike's first lifestyle Air Max models, its design draws inspiration from the Nike Pantheon. The shoe helps showcase one of Nike's greatest innovations yet thanks to its large window and fresh array of colours",
+        "description":
+            "Meet the softest, smoothest, most resilient foam yet in the Nike Air Max 270 React. One of Nike's first lifestyle Air Max models, its design draws inspiration from the Nike Pantheon. The shoe helps showcase one of Nike's greatest innovations yet thanks to its large window and fresh array of colours",
         "type": "Men's Shoe",
         "size": [
           "40",

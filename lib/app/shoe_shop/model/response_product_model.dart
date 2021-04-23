@@ -1,7 +1,7 @@
 class ResponseProduct {
-  String code;
-  String msg;
-  List<Product> list;
+  String? code;
+  String? msg;
+  List<Product>? list;
 
   ResponseProduct({this.code, this.msg, this.list});
 
@@ -9,9 +9,9 @@ class ResponseProduct {
     code = json['code'];
     msg = json['msg'];
     if (json['list'] != null) {
-      list = new List<Product>();
+      list = <Product>[];
       json['list'].forEach((v) {
-        list.add(new Product.fromJson(v));
+        list?.add(new Product.fromJson(v));
       });
     }
   }
@@ -21,35 +21,35 @@ class ResponseProduct {
     data['code'] = this.code;
     data['msg'] = this.msg;
     if (this.list != null) {
-      data['list'] = this.list.map((v) => v.toJson()).toList();
+      data['list'] = this.list?.map((v) => v.toJson()).toList();
     }
     return data;
   }
 }
 
 class Product {
-  int id;
-  String nameCategoryProduct;
-  int idCategoryProduct;
-  String urlPhoto;
-  String name;
-  String price;
-  String description;
-  String type;
-  List<String> size;
-  List<OthersImage> othersImage;
+  int? id;
+  String? nameCategoryProduct;
+  int? idCategoryProduct;
+  String? urlPhoto;
+  String? name;
+  String? price;
+  String? description;
+  String? type;
+  List<String>? size;
+  List<OthersImage>? othersImage;
 
   Product(
       {this.id,
-        this.nameCategoryProduct,
-        this.idCategoryProduct,
-        this.urlPhoto,
-        this.name,
-        this.price,
-        this.description,
-        this.type,
-        this.size,
-        this.othersImage});
+      this.nameCategoryProduct,
+      this.idCategoryProduct,
+      this.urlPhoto,
+      this.name,
+      this.price,
+      this.description,
+      this.type,
+      this.size,
+      this.othersImage});
 
   Product.fromJson(Map<String, dynamic> json) {
     id = json['id'];
@@ -62,9 +62,9 @@ class Product {
     type = json['type'];
     size = json['size'].cast<String>();
     if (json['othersImage'] != null) {
-      othersImage = new List<OthersImage>();
+      othersImage = <OthersImage>[];
       json['othersImage'].forEach((v) {
-        othersImage.add(new OthersImage.fromJson(v));
+        othersImage?.add(new OthersImage.fromJson(v));
       });
     }
   }
@@ -81,15 +81,15 @@ class Product {
     data['type'] = this.type;
     data['size'] = this.size;
     if (this.othersImage != null) {
-      data['othersImage'] = this.othersImage.map((v) => v.toJson()).toList();
+      data['othersImage'] = this.othersImage?.map((v) => v.toJson()).toList();
     }
     return data;
   }
 }
 
 class OthersImage {
-  String color;
-  List<String> urlPhoto;
+  String? color;
+  List<String>? urlPhoto;
 
   OthersImage({this.color, this.urlPhoto});
 

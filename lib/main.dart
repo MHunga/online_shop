@@ -7,14 +7,13 @@ import 'app/shoe_shop/model/cart_model.dart';
 import 'app/shoe_shop/screens/root_screen/provider/cart_provider.dart';
 import 'generated/l10n.dart';
 
-void main() async{
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   List<Cart> listCart = await CartDBProvider.db.getListItemInCart();
-  runApp(
-      MultiProvider(providers: [
-        ChangeNotifierProvider(create: (_)=>CartProvider(listCart))
-           ],
-         child: MyApp(),));
+  runApp(ChangeNotifierProvider<CartProvider>(
+    create: (_) => CartProvider(listCart),
+    builder: (context, child) => MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
@@ -29,15 +28,14 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
         fontFamily: "IBM Plex Sans",
       ),
-        localizationsDelegates: [
-          S.delegate,
-          GlobalMaterialLocalizations.delegate,
-          GlobalWidgetsLocalizations.delegate,
-          GlobalCupertinoLocalizations.delegate,
-        ],
-        supportedLocales: S.delegate.supportedLocales,
+      localizationsDelegates: [
+        S.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: S.delegate.supportedLocales,
       home: ShoeShopIntroduction(),
     );
   }
 }
-

@@ -1,15 +1,24 @@
 class Cart {
-  int id;
-  int idCategoryProduct;
-  String name;
-  String type;
-  String urlPhoto;
-  String color;
-  String size;
-  int price;
-  int amount;
+  int? id;
+  int? idCategoryProduct;
+  String? name;
+  String? type;
+  String? urlPhoto;
+  String? color;
+  String? size;
+  int? price;
+  int? amount;
 
-  Cart({this.id,this.idCategoryProduct, this.name, this.type, this.urlPhoto,this.color,this.size, this.price, this.amount});
+  Cart(
+      {this.id,
+      this.idCategoryProduct,
+      this.name,
+      this.type,
+      this.urlPhoto,
+      this.color,
+      this.size,
+      this.price,
+      this.amount});
 
   Cart.fromJson(Map<String, dynamic> json) {
     id = json['id'];

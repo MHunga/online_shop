@@ -26,24 +26,22 @@ class ProfileScreen extends StatelessWidget {
               title: S.current.location,
               iconLink: IconsLinks().location,
               subTitle: "Brooklyn, New York, US"),
-
           _itemSelectedRow(
               title: S.current.payment_methods,
               iconLink: IconsLinks().creditCard,
               subTitle: S.current.none_payment_method),
-
           _itemSelectedRow(
-              title: S.current.favourites,
-              iconLink: IconsLinks().outlineFavourite,),
-
+            title: S.current.favourites,
+            iconLink: IconsLinks().outlineFavourite,
+          ),
           _itemSelectedRow(
             title: S.current.history,
-            iconLink: IconsLinks().history,),
-
+            iconLink: IconsLinks().history,
+          ),
           _itemSelectedRow(
             title: S.current.help_support,
-            iconLink: IconsLinks().support,),
-
+            iconLink: IconsLinks().support,
+          ),
           _logOut()
         ],
       ),
@@ -55,15 +53,13 @@ class ProfileScreen extends StatelessWidget {
       children: [
         Container(
           margin: EdgeInsets.only(left: 15),
-          width: MediaQuery.of(context).size.width/4,
-          height: MediaQuery.of(context).size.width/4,
+          width: MediaQuery.of(context).size.width / 4,
+          height: MediaQuery.of(context).size.width / 4,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(MediaQuery.of(context).size.width/8),
-            image: DecorationImage(
-              fit: BoxFit.cover,
-              image: AssetImage(ImageLinks().avatar)
-            )
-          ),
+              borderRadius:
+                  BorderRadius.circular(MediaQuery.of(context).size.width / 8),
+              image: DecorationImage(
+                  fit: BoxFit.cover, image: AssetImage(ImageLinks().avatar))),
         ),
         _detailsProfile(context)
       ],
@@ -73,7 +69,7 @@ class ProfileScreen extends StatelessWidget {
   _detailsProfile(BuildContext context) {
     return Expanded(
       child: Padding(
-        padding: const EdgeInsets.only(right: 20,left: 10),
+        padding: const EdgeInsets.only(right: 20, left: 10),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -81,13 +77,24 @@ class ProfileScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Container(
-                  width: MediaQuery.of(context).size.width/2,
-                    child: AutoSizeText("James Gouse",maxLines: 1,minFontSize: 1, style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),)),
+                    width: MediaQuery.of(context).size.width / 2,
+                    child: AutoSizeText(
+                      "James Gouse",
+                      maxLines: 1,
+                      minFontSize: 1,
+                      style:
+                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    )),
                 Icon(Icons.edit_outlined)
               ],
             ),
-            Text("jamesgouse@gmail.com",style: TextStyle(fontSize: 12,fontWeight: FontWeight.normal),),
-            SizedBox(height: 8,),
+            Text(
+              "jamesgouse@gmail.com",
+              style: TextStyle(fontSize: 12, fontWeight: FontWeight.normal),
+            ),
+            SizedBox(
+              height: 8,
+            ),
             _typeMember(context),
           ],
         ),
@@ -105,46 +112,75 @@ class ProfileScreen extends StatelessWidget {
           width: 100,
           height: 33,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(3),
-            gradient: LinearGradient(
-              begin: Alignment.centerLeft,
-              end: Alignment.centerRight,
-              colors: [
-                Color(0xffFFCD1A),
-                Color(0xffFFCD1A).withOpacity(0.62),
-                Color(0xffFFCD1A),
-              ]
-            )
+              borderRadius: BorderRadius.circular(3),
+              gradient: LinearGradient(
+                  begin: Alignment.centerLeft,
+                  end: Alignment.centerRight,
+                  colors: [
+                    Color(0xffFFCD1A),
+                    Color(0xffFFCD1A).withOpacity(0.62),
+                    Color(0xffFFCD1A),
+                  ])),
+          child: Text(
+            S.current.golden_mem,
+            style: TextStyle(
+                fontSize: 12, fontWeight: FontWeight.w500, color: Colors.white),
           ),
-          child: Text(S.current.golden_mem,style: TextStyle(fontSize: 12,fontWeight: FontWeight.w500, color: Colors.white), ),
         ),
-        Text(S.current.upgrade,style: TextStyle(fontSize: 12,fontWeight: FontWeight.bold, color: Color(0xff0B07CD)),)
+        Text(
+          S.current.upgrade,
+          style: TextStyle(
+              fontSize: 12,
+              fontWeight: FontWeight.bold,
+              color: Color(0xff0B07CD)),
+        )
       ],
     );
   }
 
-  _itemSelectedRow({String iconLink, String title, String subTitle}){
+  _itemSelectedRow({String? iconLink, String? title, String? subTitle}) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 10),
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
       child: Column(
         children: [
           Row(
             children: [
-              Image.asset(iconLink,width: 24,height: 24,),
-              SizedBox(width: 5,),
+              Image.asset(
+                iconLink!,
+                width: 24,
+                height: 24,
+              ),
+              SizedBox(
+                width: 5,
+              ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(title, style: TextStyle(fontSize: 16,fontWeight: FontWeight.w600),),
-                    subTitle!=null? SizedBox(height: 9,):SizedBox(),
-                    subTitle!=null? Text(subTitle, style: TextStyle(fontSize: 12,fontWeight: FontWeight.normal),):SizedBox(),
-                  ],
+                children: [
+                  Text(
+                    title!,
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+                  ),
+                  subTitle != null
+                      ? SizedBox(
+                          height: 9,
+                        )
+                      : SizedBox(),
+                  subTitle != null
+                      ? Text(
+                          subTitle,
+                          style: TextStyle(
+                              fontSize: 12, fontWeight: FontWeight.normal),
+                        )
+                      : SizedBox(),
+                ],
               ),
               Spacer(),
               Icon(Icons.chevron_right)
             ],
           ),
-          Divider(thickness: 1,)
+          Divider(
+            thickness: 1,
+          )
         ],
       ),
     );
@@ -154,8 +190,11 @@ class ProfileScreen extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(top: 10),
       child: FlatButton(
-          onPressed: (){},
-          child: Text(S.current.logout,style: TextStyle(fontSize: 16,fontWeight: FontWeight.w500),)),
+          onPressed: () {},
+          child: Text(
+            S.current.logout,
+            style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+          )),
     );
   }
 }
